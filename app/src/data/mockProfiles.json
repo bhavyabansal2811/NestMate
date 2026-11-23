@@ -5,6 +5,9 @@
     "college": "IIT Delhi",
     "budget": 8000,
     "gender": "Male",
+    "bio": "Final year CS student. Quiet, focused on academics, and loves coding late-night hackathon projects.",
+    "phone": "+91 98101 23456",
+    "email": "aarav.sharma@iitd.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -13,6 +16,9 @@
     "college": "Delhi University",
     "budget": 6000,
     "gender": "Female",
+    "bio": "Economics undergrad at DU North Campus. Loves reading, acoustic music, and exploring Delhi cafes.",
+    "phone": "+91 98202 34567",
+    "email": "priya.mehta@du.ac.in",
     "preferences": { "sleep": "Night Owl", "cleanliness": "Moderate", "diet": "Non-Veg", "smoking": "No" }
   },
   {
@@ -21,6 +27,9 @@
     "college": "IIT Delhi",
     "budget": 7000,
     "gender": "Male",
+    "bio": "Mechanical engineering student. Plays badminton on weekends and looking for a chill flatmate.",
+    "phone": "+91 98303 45678",
+    "email": "rohit.verma@iitd.ac.in",
     "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -29,6 +38,9 @@
     "college": "NSUT",
     "budget": 5500,
     "gender": "Female",
+    "bio": "ECE student. Vegan food enthusiast, loves yoga and morning runs. Looking for an organized flat.",
+    "phone": "+91 98404 56789",
+    "email": "sneha.kapoor@nsut.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Vegan", "smoking": "No" }
   },
   {
@@ -37,6 +49,9 @@
     "college": "DTU",
     "budget": 9000,
     "gender": "Male",
+    "bio": "Software developer intern and gamer. Friendly, outgoing, and enjoys group movie nights.",
+    "phone": "+91 98505 67890",
+    "email": "karan.malhotra@dtu.ac.in",
     "preferences": { "sleep": "Night Owl", "cleanliness": "Messy", "diet": "Non-Veg", "smoking": "Occasionally" }
   },
   {
@@ -45,6 +60,9 @@
     "college": "Delhi University",
     "budget": 5000,
     "gender": "Female",
+    "bio": "Literature student at Miranda House. Into books, tea, and peaceful study spaces.",
+    "phone": "+91 98606 78901",
+    "email": "ananya.singh@du.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -53,6 +71,9 @@
     "college": "IIIT Delhi",
     "budget": 10000,
     "gender": "Male",
+    "bio": "AI/ML researcher at IIIT-D. Minimalist, keeps everything tidy, and works on deep learning papers.",
+    "phone": "+91 98707 89012",
+    "email": "ishaan.gupta@iiitd.ac.in",
     "preferences": { "sleep": "Night Owl", "cleanliness": "Very Neat", "diet": "Non-Veg", "smoking": "No" }
   },
   {
@@ -61,6 +82,9 @@
     "college": "Ambedkar University",
     "budget": 6500,
     "gender": "Female",
+    "bio": "Psychology major. Friendly, empathetic, and loves cooking vegetarian meals together.",
+    "phone": "+91 98808 90123",
+    "email": "riya.sen@aud.ac.in",
     "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -69,6 +93,9 @@
     "college": "DTU",
     "budget": 8500,
     "gender": "Male",
+    "bio": "Civil engineering student. Early riser, fitness enthusiast, and respectful of personal space.",
+    "phone": "+91 98909 01234",
+    "email": "devansh.nair@dtu.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -77,6 +104,9 @@
     "college": "NSUT",
     "budget": 7500,
     "gender": "Female",
+    "bio": "Computer Science undergrad. Active in tech clubs, neat, and prefers a clean quiet environment.",
+    "phone": "+91 98010 12345",
+    "email": "tanvi.joshi@nsut.ac.in",
     "preferences": { "sleep": "Night Owl", "cleanliness": "Very Neat", "diet": "Vegan", "smoking": "No" }
   },
   {
@@ -85,6 +115,9 @@
     "college": "Jamia Millia",
     "budget": 5000,
     "gender": "Male",
+    "bio": "Architecture student. Creative, works on scale models, and easy-going flatmate.",
+    "phone": "+91 98111 23456",
+    "email": "kabir.das@jmi.ac.in",
     "preferences": { "sleep": "Flexible", "cleanliness": "Messy", "diet": "Non-Veg", "smoking": "Yes" }
   },
   {
@@ -93,6 +126,9 @@
     "college": "Delhi University",
     "budget": 7000,
     "gender": "Female",
+    "bio": "Commerce student at SRCC. Loves morning walks, financial modeling, and south Indian food.",
+    "phone": "+91 98222 34567",
+    "email": "meera.iyer@srcc.du.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -101,6 +137,9 @@
     "college": "IIIT Delhi",
     "budget": 11000,
     "gender": "Male",
+    "bio": "Cybersecurity student and gym goer. Looking for a high-speed internet flat near Okhla.",
+    "phone": "+91 98333 45678",
+    "email": "aditya.rao@iiitd.ac.in",
     "preferences": { "sleep": "Night Owl", "cleanliness": "Moderate", "diet": "Non-Veg", "smoking": "Occasionally" }
   },
   {
@@ -109,6 +148,9 @@
     "college": "Delhi University",
     "budget": 6000,
     "gender": "Female",
+    "bio": "Journalism & Mass Comm student. Very sociable, neat, and loves photography.",
+    "phone": "+91 98444 56789",
+    "email": "simran.kaur@du.ac.in",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
   },
   {
@@ -117,6 +159,9 @@
     "college": "Ambedkar University",
     "budget": 8000,
     "gender": "Other",
+    "bio": "Visual arts student. Quiet, creative, plant parent, and looking for inclusive flatmates.",
+    "phone": "+91 98555 67890",
+    "email": "alex.morgan@aud.ac.in",
     "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Vegan", "smoking": "No" }
   }
 ]

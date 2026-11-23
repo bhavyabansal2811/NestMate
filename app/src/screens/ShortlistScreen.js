@@ -11,10 +11,13 @@ import { loadShortlist, toggleShortlist } from '../utils/shortlist';
 import { loadProfile } from '../utils/profile';
 import { getCompatibilityScore } from '../utils/compatibility';
 import RoommateCard from '../components/RoommateCard';
+import RoommateDetailModal from '../components/RoommateDetailModal';
 
 export default function ShortlistScreen() {
   const [shortlisted, setShortlisted] = useState([]);
   const [userPrefs, setUserPrefs] = useState(null);
+  const [selectedProfile, setSelectedProfile] = useState(null);
+  const [detailVisible, setDetailVisible] = useState(false);
 
   // Reload every time the tab is focused
   useFocusEffect(
@@ -34,6 +37,11 @@ export default function ShortlistScreen() {
     setShortlisted(updated);
   };
 
+  const handleCardPress = (profile) => {
+    setSelectedProfile(profile);
+    setDetailVisible(true);
+  };
+
   const renderItem = ({ item }) => {
     const score = getCompatibilityScore(userPrefs, item.preferences);
     return (
@@ -42,9 +50,18 @@ export default function ShortlistScreen() {
         score={score}
         onShortlist={handleRemove}
         isShortlisted={true}
+        onPressCard={handleCardPress}
       />
     );
   };
+
+  const selectedScore = selectedProfile
+    ? getCompatibilityScore(userPrefs, selectedProfile.preferences)
+    : 0;
+
+  const isSelectedShortlisted = selectedProfile
+    ? shortlisted.some((s) => s.id === selectedProfile.id)
+    : false;
 
   return (
     <View style={styles.container}>
@@ -65,6 +82,17 @@ export default function ShortlistScreen() {
           showsVerticalScrollIndicator={false}
         />
       )}
+
+      {/* Detail Modal */}
+      <RoommateDetailModal
+        visible={detailVisible}
+        profile={selectedProfile}
+        userPrefs={userPrefs}
+        score={selectedScore}
+        isShortlisted={isSelectedShortlisted}
+        onShortlist={handleRemove}
+        onClose={() => setDetailVisible(false)}
+      />
     </View>
   );
 }

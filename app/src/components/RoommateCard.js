@@ -1,13 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function RoommateCard({ profile, score, onShortlist, isShortlisted }) {
+export default function RoommateCard({ profile, score, onShortlist, isShortlisted, onPressCard }) {
   const scoreColor =
     score >= 70 ? '#27ae60' : score >= 40 ? '#f39c12' : '#e74c3c';
 
   return (
-    <View style={styles.card}>
-      {/* Avatar placeholder */}
+    <TouchableOpacity
+      style={styles.card}
+      activeOpacity={0.8}
+      onPress={() => onPressCard && onPressCard(profile)}
+    >
+      {/* Avatar */}
       <View style={styles.avatar}>
         <Text style={styles.avatarText}>
           {profile.name ? profile.name[0].toUpperCase() : '?'}
@@ -20,6 +24,7 @@ export default function RoommateCard({ profile, score, onShortlist, isShortliste
         <Text style={styles.detail}>🎓 {profile.college}</Text>
         <Text style={styles.detail}>💰 ₹{profile.budget}/mo</Text>
         <Text style={styles.detail}>⚧ {profile.gender}</Text>
+        <Text style={styles.hint}>View profile & habits →</Text>
       </View>
 
       {/* Match % + Shortlist */}
@@ -28,11 +33,15 @@ export default function RoommateCard({ profile, score, onShortlist, isShortliste
           <Text style={styles.scoreText}>{score}%</Text>
           <Text style={styles.scoreLabel}>match</Text>
         </View>
-        <TouchableOpacity onPress={() => onShortlist(profile)} style={styles.bookmarkBtn}>
+        <TouchableOpacity
+          onPress={() => onShortlist(profile)}
+          style={styles.bookmarkBtn}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        >
           <Text style={styles.bookmarkIcon}>{isShortlisted ? '★' : '☆'}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -77,6 +86,12 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#555',
     marginBottom: 2,
+  },
+  hint: {
+    fontSize: 11,
+    color: '#4A90D9',
+    fontWeight: '600',
+    marginTop: 4,
   },
   right: {
     alignItems: 'center',

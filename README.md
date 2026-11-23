@@ -19,7 +19,7 @@ A clean, user-friendly mobile application built with **React Native (Expo)** des
 
 ---
 
-## ✨ Key Features (8 Features)
+## ✨ Key Features
 
 | # | Feature | Description |
 |---|---|---|
@@ -31,6 +31,7 @@ A clean, user-friendly mobile application built with **React Native (Expo)** des
 | 6️⃣ | **Compatibility Scoring** | Rule-based algorithm calculating matching percentage (0–100%) dynamically. |
 | 7️⃣ | **Shortlist / Bookmarks** | Bookmark profiles with real-time sync and persistent storage. |
 | 8️⃣ | **Edit Profile** | Update personal information and lifestyle preferences anytime with instant re-scoring. |
+| 9️⃣ | **Detailed Profile View** | Tap any flatmate card to view their full bio, complete compatibility breakdown, and contact details. |
 
 ---
 

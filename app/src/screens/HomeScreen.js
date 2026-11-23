@@ -10,6 +10,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import mockProfiles from '../data/mockProfiles.json';
 import RoommateCard from '../components/RoommateCard';
 import FilterModal from '../components/FilterModal';
+import RoommateDetailModal from '../components/RoommateDetailModal';
 import { getCompatibilityScore } from '../utils/compatibility';
 import { loadProfile } from '../utils/profile';
 import { loadShortlist, toggleShortlist } from '../utils/shortlist';
@@ -20,6 +21,10 @@ export default function HomeScreen() {
   const [shortlisted, setShortlisted] = useState([]);
   const [filters, setFilters] = useState({ minBudget: null, maxBudget: null, college: '', gender: 'All' });
   const [filterVisible, setFilterVisible] = useState(false);
+
+  // Selected profile for detail popup
+  const [selectedProfile, setSelectedProfile] = useState(null);
+  const [detailVisible, setDetailVisible] = useState(false);
 
   // Reload user profile & shortlist on tab focus so score updates dynamically
   useFocusEffect(
@@ -52,6 +57,11 @@ export default function HomeScreen() {
     setShortlisted(updated);
   };
 
+  const handleCardPress = (profile) => {
+    setSelectedProfile(profile);
+    setDetailVisible(true);
+  };
+
   const renderItem = ({ item }) => {
     const score = getCompatibilityScore(userPrefs, item.preferences);
     const isShortlisted = shortlisted.some((s) => s.id === item.id);
@@ -61,6 +71,7 @@ export default function HomeScreen() {
         score={score}
         onShortlist={handleShortlist}
         isShortlisted={isShortlisted}
+        onPressCard={handleCardPress}
       />
     );
   };
@@ -69,6 +80,14 @@ export default function HomeScreen() {
     filters.minBudget, filters.maxBudget, filters.college,
     filters.gender !== 'All' ? filters.gender : null,
   ].filter(Boolean).length;
+
+  const selectedScore = selectedProfile
+    ? getCompatibilityScore(userPrefs, selectedProfile.preferences)
+    : 0;
+
+  const isSelectedShortlisted = selectedProfile
+    ? shortlisted.some((s) => s.id === selectedProfile.id)
+    : false;
 
   return (
     <View style={styles.container}>
@@ -99,11 +118,23 @@ export default function HomeScreen() {
         />
       )}
 
+      {/* Filter Modal */}
       <FilterModal
         visible={filterVisible}
         onClose={() => setFilterVisible(false)}
         onApply={setFilters}
         currentFilters={filters}
+      />
+
+      {/* Detailed Roommate Profile Modal */}
+      <RoommateDetailModal
+        visible={detailVisible}
+        profile={selectedProfile}
+        userPrefs={userPrefs}
+        score={selectedScore}
+        isShortlisted={isSelectedShortlisted}
+        onShortlist={handleShortlist}
+        onClose={() => setDetailVisible(false)}
       />
     </View>
   );
