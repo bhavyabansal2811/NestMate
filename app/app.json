@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "test-nestmate-blank",
-    "slug": "test-nestmate-blank",
+    "name": "NestMate",
+    "slug": "nestmate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

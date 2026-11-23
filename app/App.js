@@ -5,12 +5,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, View } from 'react-native';
 
-import { loadUser } from '../src/utils/auth';
-import LoginScreen from '../src/screens/LoginScreen';
-import ProfileSetupScreen from '../src/screens/ProfileSetupScreen';
-import HomeScreen from '../src/screens/HomeScreen';
-import ShortlistScreen from '../src/screens/ShortlistScreen';
-import EditProfileScreen from '../src/screens/EditProfileScreen';
+import { loadUser } from './src/utils/auth';
+import LoginScreen from './src/screens/LoginScreen';
+import ProfileSetupScreen from './src/screens/ProfileSetupScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import ShortlistScreen from './src/screens/ShortlistScreen';
+import EditProfileScreen from './src/screens/EditProfileScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
