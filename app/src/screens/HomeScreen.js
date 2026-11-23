@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import mockProfiles from '../data/mockProfiles.json';
 import RoommateCard from '../components/RoommateCard';
 import FilterModal from '../components/FilterModal';
@@ -20,17 +21,20 @@ export default function HomeScreen() {
   const [filters, setFilters] = useState({ minBudget: null, maxBudget: null, college: '', gender: 'All' });
   const [filterVisible, setFilterVisible] = useState(false);
 
-  useEffect(() => {
-    const init = async () => {
-      const profile = await loadProfile();
-      setUserPrefs(profile?.preferences || null);
-      const saved = await loadShortlist();
-      setShortlisted(saved);
-    };
-    init();
-  }, []);
+  // Reload user profile & shortlist on tab focus so score updates dynamically
+  useFocusEffect(
+    useCallback(() => {
+      const init = async () => {
+        const profile = await loadProfile();
+        setUserPrefs(profile?.preferences || null);
+        const saved = await loadShortlist();
+        setShortlisted(saved);
+      };
+      init();
+    }, [])
+  );
 
-  // Apply filters every time filters change
+  // Apply filters whenever filter state updates
   useEffect(() => {
     let result = mockProfiles;
     if (filters.minBudget) result = result.filter((p) => p.budget >= filters.minBudget);
@@ -68,12 +72,15 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Header Row */}
+      {/* Search / Filter action bar */}
       <View style={styles.header}>
-        <Text style={styles.heading}>🔍 Find Roommates</Text>
+        <View>
+          <Text style={styles.heading}>Explore Flatmates</Text>
+          <Text style={styles.subheading}>{profiles.length} profiles available</Text>
+        </View>
         <TouchableOpacity style={styles.filterBtn} onPress={() => setFilterVisible(true)}>
           <Text style={styles.filterText}>
-            Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
+            ⚙️ Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
           </Text>
         </TouchableOpacity>
       </View>
@@ -104,16 +111,18 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f0f4f8', paddingHorizontal: 14, paddingTop: 14 },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 },
-  heading: { fontSize: 22, fontWeight: 'bold', color: '#333' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 },
+  heading: { fontSize: 20, fontWeight: 'bold', color: '#2c3e50' },
+  subheading: { fontSize: 12, color: '#7f8c8d', marginTop: 2 },
   filterBtn: {
     backgroundColor: '#4A90D9',
     paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 20,
+    elevation: 2,
   },
-  filterText: { color: '#fff', fontWeight: '600', fontSize: 13 },
-  list: { paddingBottom: 20 },
+  filterText: { color: '#fff', fontWeight: 'bold', fontSize: 12 },
+  list: { paddingBottom: 24 },
   empty: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   emptyText: { color: '#888', fontSize: 16 },
 });
