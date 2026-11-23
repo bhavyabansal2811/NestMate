@@ -1,0 +1,1 @@
+export default function ProfileSetupScreen(){return null;}
