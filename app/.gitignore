@@ -1,0 +1,7 @@
+# Dependencies
+node_modules/
+# Expo generated files
+.expo/
+.expo-shared/
+metro-cache/
+.DS_Store
