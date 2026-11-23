@@ -7,6 +7,7 @@ import { ActivityIndicator, View } from 'react-native';
 
 import { loadUser } from '../src/utils/auth';
 import LoginScreen from '../src/screens/LoginScreen';
+import ProfileSetupScreen from '../src/screens/ProfileSetupScreen';
 import HomeScreen from '../src/screens/HomeScreen';
 import ShortlistScreen from '../src/screens/ShortlistScreen';
 import EditProfileScreen from '../src/screens/EditProfileScreen';
@@ -47,6 +48,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="ProfileSetup" component={ProfileSetupScreen} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
       </Stack.Navigator>
       <StatusBar style="auto" />

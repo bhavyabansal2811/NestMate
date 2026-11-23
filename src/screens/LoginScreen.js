@@ -27,10 +27,11 @@ export default function LoginScreen({ navigation }) {
       return;
     }
 
-    // Mock auth — just save user locally and navigate
+    // Mock auth — save user locally and navigate
     const user = { name: isLogin ? username : name, username, password };
     await saveUser(user);
-    navigation.replace('MainTabs');
+    // New users go to profile setup; returning users go straight to main tabs
+    navigation.replace(isLogin ? 'MainTabs' : 'ProfileSetup');
   };
 
   return (
