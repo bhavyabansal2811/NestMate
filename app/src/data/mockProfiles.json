@@ -1,20 +1,50 @@
 [
   {
     "id": "1",
-    "name": "Alice",
-    "college": "XYZ University",
-    "budget": 5000,
-    "gender": "Female",
-    "avatar": "avatar1.png",
-    "preferences": {"sleep":"Early Bird","cleanliness":"Neat","diet":"Veg","smoking":"No"}
+    "name": "Aarav Sharma",
+    "college": "IIT Delhi",
+    "budget": 8000,
+    "gender": "Male",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
   },
   {
     "id": "2",
-    "name": "Bob",
-    "college": "ABC College",
-    "budget": 4500,
+    "name": "Priya Mehta",
+    "college": "Delhi University",
+    "budget": 6000,
+    "gender": "Female",
+    "preferences": { "sleep": "Night Owl", "cleanliness": "Moderate", "diet": "Non-Veg", "smoking": "No" }
+  },
+  {
+    "id": "3",
+    "name": "Rohit Verma",
+    "college": "IIT Delhi",
+    "budget": 7000,
     "gender": "Male",
-    "avatar": "avatar2.png",
-    "preferences": {"sleep":"Night Owl","cleanliness":"Messy","diet":"Non-Veg","smoking":"Yes"}
+    "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "4",
+    "name": "Sneha Kapoor",
+    "college": "NSUT",
+    "budget": 5500,
+    "gender": "Female",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Vegan", "smoking": "No" }
+  },
+  {
+    "id": "5",
+    "name": "Karan Malhotra",
+    "college": "DTU",
+    "budget": 9000,
+    "gender": "Male",
+    "preferences": { "sleep": "Night Owl", "cleanliness": "Messy", "diet": "Non-Veg", "smoking": "Occasionally" }
+  },
+  {
+    "id": "6",
+    "name": "Ananya Singh",
+    "college": "Delhi University",
+    "budget": 5000,
+    "gender": "Female",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
   }
 ]
