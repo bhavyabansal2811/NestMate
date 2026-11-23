@@ -1,13 +1,19 @@
 # 🏠 NestMate — Smart Roommate Matching App
 
-A clean, user-friendly mobile application built with **React Native (Expo)** designed to help students and young professionals find compatible roommates based on lifestyle habits, budget, and location preferences.
+A clean, user-friendly mobile application built with **React Native (Expo)** designed to help students and young flat-seekers find compatible flatmates based on lifestyle habits, budget, college, and personal preferences.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Framework: React Native](https://img.shields.io/badge/Framework-React%20Native-blue.svg)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK%2058-black.svg)](https://expo.dev/)
 
 ---
 
 ## 📌 Project Overview
 
 - **Project Title:** NestMate – Smart Roommate Matching Application
-- **Category:** Minor Project (B.Tech CS-AI)
+- **Student Name:** Bhavya Bansal
+- **Degree:** B.Tech in Computer Science & Artificial Intelligence (CS-AI)
+- **Category:** Minor Academic Project
 - **Tech Stack:** React Native, Expo, React Navigation, AsyncStorage
 - **Target Audience:** College students and young flat-seekers
 
@@ -17,60 +23,80 @@ A clean, user-friendly mobile application built with **React Native (Expo)** des
 
 | # | Feature | Description |
 |---|---|---|
-| 1️⃣ | **User Authentication** | Simple on-device account registration and login session. |
-| 2️⃣ | **Profile Creation** | Add personal info such as name, age, college/workplace, budget, and avatar. |
-| 3️⃣ | **Preference Form** | Select lifestyle habits (sleep schedule, cleanliness, diet, smoking habits, etc.). |
-| 4️⃣ | **Browse Roommates** | Scroll through profiles displayed as clean, readable cards. |
-| 5️⃣ | **Smart Search & Filters** | Filter prospective roommates by budget range, college, and gender. |
-| 6️⃣ | **Compatibility Scoring** | Calculates and displays a match percentage based on shared preferences. |
-| 7️⃣ | **Shortlist / Bookmarks** | Save favorite profiles for quick access later using persistent storage. |
-| 8️⃣ | **Edit Profile** | Update your own personal details, budget, and preferences anytime. |
+| 1️⃣ | **User Authentication** | On-device mock authentication with signup, login, and AsyncStorage session. |
+| 2️⃣ | **Profile Creation** | Capture personal details (name, age, college/workplace, budget, gender). |
+| 3️⃣ | **Preference Form** | Interactive questionnaire for lifestyle habits (sleep, cleanliness, diet, smoking). |
+| 4️⃣ | **Browse Roommates** | Clean card feed displaying prospective flatmate profiles with match scores. |
+| 5️⃣ | **Smart Search & Filters** | Filter modal to filter by budget range (min/max), college name, and gender. |
+| 6️⃣ | **Compatibility Scoring** | Rule-based algorithm calculating matching percentage (0–100%) dynamically. |
+| 7️⃣ | **Shortlist / Bookmarks** | Bookmark profiles with real-time sync and persistent storage. |
+| 8️⃣ | **Edit Profile** | Update personal information and lifestyle preferences anytime with instant re-scoring. |
 
 ---
 
 ## 🛠️ Tech Stack & Architecture
 
 - **Frontend Framework:** [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
-- **Navigation:** React Navigation (Stack & Tab navigation)
-- **Data Persistence:** `@react-native-async-storage/async-storage` (Local storage for offline-first simplicity)
-- **State Management:** React Hooks (`useState`, `useEffect`, `useContext`)
-- **Matching Logic:** JavaScript score-weighting algorithm comparing preference attributes
+- **Navigation:** React Navigation (Native Stack + Bottom Tab Navigation)
+- **Data Persistence:** `@react-native-async-storage/async-storage` (Offline-first local storage)
+- **State Management:** React Hooks (`useState`, `useEffect`, `useCallback`, `useFocusEffect`)
+- **Matching Logic:** Rule-based weighted scoring comparing lifestyle preferences
 
 ---
 
 ## 📱 Application Flow
 
 ```text
-[ Welcome / Login ] ──▶ [ Profile Setup & Preferences ]
-                                   │
-                                   ▼
-                       [ Main App (Bottom Tabs) ]
-                                   │
-      ┌────────────────────────────┼────────────────────────────┐
-      ▼                            ▼                            ▼
-[ 🔍 Browse / Feed ]      [ ⭐ Shortlisted ]          [ 👤 My Profile ]
-      │                                                         │
-      └─▶ [ Filter Modal ]                                      └─▶ [ Edit Profile ]
+[ Login / Sign Up ] ──▶ [ Profile Setup (Questionnaire) ]
+                                    │
+                                    ▼
+                        [ Main App (Bottom Tabs) ]
+                                    │
+       ┌────────────────────────────┼────────────────────────────┐
+       ▼                            ▼                            ▼
+[ 🔍 Browse Feed ]           [ ⭐ Shortlist ]             [ 👤 My Profile ]
+       │                                                         │
+       └─▶ [ ⚙️ Filter Modal ]                                    └─▶ [ Edit Details & Habits ]
+```
+
+---
+
+## 📁 Project Directory Structure
+
+```text
+NestMate/
+├── LICENSE                 # MIT License
+├── README.md               # Project documentation & guide
+└── app/                    # Expo application root
+    ├── assets/             # Icons and application images
+    ├── src/
+    │   ├── components/     # RoommateCard, FilterModal
+    │   ├── data/           # mockProfiles.json (Sample student profiles)
+    │   ├── navigation/     # AuthNavigator, TabNavigator
+    │   ├── screens/        # LoginScreen, ProfileSetupScreen, HomeScreen, ShortlistScreen, EditProfileScreen
+    │   └── utils/          # auth.js, profile.js, compatibility.js, shortlist.js
+    ├── App.js              # Root navigation & app entry point
+    ├── app.json            # Expo project configuration
+    └── package.json        # Dependencies and scripts
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-Follow these steps to run the application locally on your machine or physical device:
+Follow these steps to run the application on your physical device via **Expo Go**:
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
-- **Expo Go** app installed on your Android/iOS device
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- **Expo Go** mobile app installed on your Android or iOS device
 
-### Installation
+### Installation & Run
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<YOUR-USERNAME>/nestmate-app.git
-   cd nestmate-app
+   git clone https://github.com/bhavyabansal2811/NestMate.git
+   cd NestMate/app
    ```
 
 2. **Install dependencies:**
@@ -83,49 +109,29 @@ Follow these steps to run the application locally on your machine or physical de
    npx expo start
    ```
 
-4. **Run the App:**
-   - Scan the QR code in the terminal using the **Expo Go** app on your phone.
-   - Or press `a` to run on an Android emulator / `i` for iOS simulator.
-
----
-
-## 📁 Project Directory Structure
-
-```text
-nestmate-app/
-├── assets/             # Images, icons, and placeholder avatars
-├── src/
-│   ├── components/     # Reusable UI components (RoommateCard, CustomButton)
-│   ├── data/           # Mock data for demonstration profiles
-│   ├── navigation/     # App navigators (AuthNavigator, TabNavigator)
-│   ├── screens/        # Screen views
-│   │   ├── LoginScreen.js
-│   │   ├── ProfileSetupScreen.js
-│   │   ├── HomeScreen.js
-│   │   ├── FilterScreen.js
-│   │   ├── ShortlistScreen.js
-│   │   └── EditProfileScreen.js
-│   └── utils/          # Compatibility scoring helper functions & storage keys
-├── App.js              # Entry point of the application
-├── package.json        # Dependencies and scripts
-└── README.md           # Project documentation
-```
+4. **Launch on your device:**
+   - Scan the QR code shown in the terminal using the **Expo Go** app on your phone.
 
 ---
 
 ## 💡 How Compatibility Matching Works
 
-The compatibility system uses a rule-based scoring mechanism:
-1. Compares user habits with each profile (e.g., Sleep Schedule: Early Bird vs. Night Owl).
-2. Assigns weighted points to exact matches across common factors:
-   - Sleep Schedule Match
-   - Cleanliness Level Match
-   - Dietary Preference Match
-   - Smoking Habit Match
-3. Normalizes the score into a clear percentage (`0% - 100%`) shown directly on each roommate card.
+The compatibility matching algorithm compares the logged-in student's preferences with prospective roommates across four weighted factors:
+
+| Lifestyle Factor | Weight | Description |
+|---|:---:|---|
+| **Sleep Schedule** | 30% | Early Bird, Night Owl, or Flexible |
+| **Cleanliness** | 30% | Very Neat, Moderate, or Messy |
+| **Dietary Habit** | 20% | Veg, Non-Veg, or Vegan |
+| **Smoking Habit** | 20% | No, Yes, or Occasionally |
+| **Total Match Score** | **100%** | Displayed as a color-coded percentage badge on each card |
+
+When you update your preferences in **My Profile**, the Browse feed immediately recalculates and reflects the new match percentages in real time.
 
 ---
 
 ## 👨‍💻 Author
+
 - **Bhavya Bansal**
-- **Student:** B.Tech Computer Science & Artificial Intelligence (CS-AI)
+- **Degree:** B.Tech in Computer Science & Artificial Intelligence (CS-AI)
+- **Repository:** [bhavyabansal2811/NestMate](https://github.com/bhavyabansal2811/NestMate)

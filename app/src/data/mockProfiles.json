@@ -46,5 +46,77 @@
     "budget": 5000,
     "gender": "Female",
     "preferences": { "sleep": "Early Bird", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "7",
+    "name": "Ishaan Gupta",
+    "college": "IIIT Delhi",
+    "budget": 10000,
+    "gender": "Male",
+    "preferences": { "sleep": "Night Owl", "cleanliness": "Very Neat", "diet": "Non-Veg", "smoking": "No" }
+  },
+  {
+    "id": "8",
+    "name": "Riya Sen",
+    "college": "Ambedkar University",
+    "budget": 6500,
+    "gender": "Female",
+    "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "9",
+    "name": "Devansh Nair",
+    "college": "DTU",
+    "budget": 8500,
+    "gender": "Male",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "10",
+    "name": "Tanvi Joshi",
+    "college": "NSUT",
+    "budget": 7500,
+    "gender": "Female",
+    "preferences": { "sleep": "Night Owl", "cleanliness": "Very Neat", "diet": "Vegan", "smoking": "No" }
+  },
+  {
+    "id": "11",
+    "name": "Kabir Das",
+    "college": "Jamia Millia",
+    "budget": 5000,
+    "gender": "Male",
+    "preferences": { "sleep": "Flexible", "cleanliness": "Messy", "diet": "Non-Veg", "smoking": "Yes" }
+  },
+  {
+    "id": "12",
+    "name": "Meera Iyer",
+    "college": "Delhi University",
+    "budget": 7000,
+    "gender": "Female",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Moderate", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "13",
+    "name": "Aditya Rao",
+    "college": "IIIT Delhi",
+    "budget": 11000,
+    "gender": "Male",
+    "preferences": { "sleep": "Night Owl", "cleanliness": "Moderate", "diet": "Non-Veg", "smoking": "Occasionally" }
+  },
+  {
+    "id": "14",
+    "name": "Simran Kaur",
+    "college": "Delhi University",
+    "budget": 6000,
+    "gender": "Female",
+    "preferences": { "sleep": "Early Bird", "cleanliness": "Very Neat", "diet": "Veg", "smoking": "No" }
+  },
+  {
+    "id": "15",
+    "name": "Alex Morgan",
+    "college": "Ambedkar University",
+    "budget": 8000,
+    "gender": "Other",
+    "preferences": { "sleep": "Flexible", "cleanliness": "Moderate", "diet": "Vegan", "smoking": "No" }
   }
 ]
