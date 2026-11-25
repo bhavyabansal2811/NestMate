@@ -11,9 +11,6 @@ A clean, user-friendly mobile application built with **React Native (Expo)** des
 ## 📌 Project Overview
 
 - **Project Title:** NestMate – Smart Roommate Matching Application
-- **Student Name:** Bhavya Bansal
-- **Degree:** B.Tech in Computer Science & Artificial Intelligence (CS-AI)
-- **Category:** Minor Academic Project
 - **Tech Stack:** React Native, Expo, React Navigation, AsyncStorage
 - **Target Audience:** College students and young flat-seekers
 
@@ -134,5 +131,3 @@ When you update your preferences in **My Profile**, the Browse feed immediately 
 ## 👨‍💻 Author
 
 - **Bhavya Bansal**
-- **Degree:** B.Tech in Computer Science & Artificial Intelligence (CS-AI)
-- **Repository:** [bhavyabansal2811/NestMate](https://github.com/bhavyabansal2811/NestMate)
